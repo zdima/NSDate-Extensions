@@ -326,6 +326,18 @@ static const unsigned componentFlags = (NSYearCalendarUnit| NSMonthCalendarUnit 
     return [self dateByAddingMonths:-dMonths];
 }
 
+- (NSDate *) dateByAddingWeeks: (NSInteger) dWeeks
+{
+	NSDateComponents *components = [[NSDateComponents alloc] init];
+	components.week = dWeeks;
+	NSDate* newDate = [[NSCalendar currentCalendar] dateByAddingComponents:components toDate:self options:0];
+	return newDate;
+}
+
+- (NSDate *) dateBySubtractingWeeks: (NSInteger) dWeeks {
+    return [self dateByAddingWeeks:(dWeeks * -1)];
+}
+
 // Courtesy of dedan who mentions issues with Daylight Savings
 - (NSDate *) dateByAddingDays: (NSInteger) dDays
 {
