@@ -31,7 +31,7 @@ static NSDate* epochMark = nil;
 
 - (NSInteger) daysSinceEpoch
 {
-    return [self daysAfterDate:epochMark];
+    return [epochMark distanceInDaysToDate:self];
 }
 
 @end
