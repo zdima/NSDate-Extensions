@@ -15,18 +15,18 @@ static NSDate* epochMark = nil;
 + (void) initialize
 {
     // set Epoch to 1970 when class first called
-    epochMark = [NSDate dateWithTimeIntervalSince1970:0];
+    epochMark = [[NSDate dateWithTimeIntervalSince1970:0] dateAtStartOfDay];
 }
 
 + (void) setEpochMark:(NSDate*)aMark
 {
-    epochMark = aMark;
+    epochMark = [aMark dateAtStartOfDay];
 }
 
 + (NSDate*) dateOnDay:(NSInteger)daysSinceEpoch
 {
     NSAssert( epochMark!=nil, @"epochMark not initialized");
-    return [epochMark dateByAddingDays:daysSinceEpoch];
+    return [[epochMark dateByAddingDays:daysSinceEpoch] dateAtStartOfDay];
 }
 
 - (NSInteger) daysSinceEpoch

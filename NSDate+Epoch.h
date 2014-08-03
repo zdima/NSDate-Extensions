@@ -21,7 +21,7 @@
  *
  *  @param daysSinceEpoch days from Epoch
  *
- *  @return return NSDate instance that is daysSinceEpoch from Epoch
+ *  @return return NSDate instance that is daysSinceEpoch from Epoch and time set to at start of day
  */
 + (NSDate*) dateOnDay:(NSInteger)daysSinceEpoch;
 
