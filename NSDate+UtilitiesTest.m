@@ -27,14 +27,16 @@
 
 - (void)testExample {
 	
+    NSTimeZone* tz = [NSTimeZone defaultTimeZone];
 	NSDate* date = [NSDate date];
+    NSDate* localTime1970 = [[NSDate dateWithTimeIntervalSince1970:0] dateByAddingMinutes:-tz.secondsFromGMT/60];
 	NSInteger days = [date daysSinceEpoch];
 	
 	XCTAssert( [date isEqualToDate:[[date dateByAddingDays:110] dateBySubtractingDays:110]], "Add/Sub days");
 	
-	NSInteger distance = -[date distanceInDaysToDate:[NSDate dateWithTimeIntervalSince1970:0]];
+	NSInteger distance = -[date distanceInDaysToDate:localTime1970];
 	
-	XCTAssert( [[date dateAtStartOfDay] isEqualToDate:[[[NSDate dateWithTimeIntervalSince1970:0] dateByAddingDays:distance] dateAtStartOfDay]], "distanceInDaysToDate/dateByAddingDays");
+	XCTAssert( [[date dateAtStartOfDay] isEqualToDate:[[localTime1970 dateByAddingDays:distance] dateAtStartOfDay]], "distanceInDaysToDate/dateByAddingDays");
 	
     XCTAssert( [[NSDate dateOnDay:days] isEqualTo:[date dateAtStartOfDay]] , @"[NSDate date] Pass");
 
