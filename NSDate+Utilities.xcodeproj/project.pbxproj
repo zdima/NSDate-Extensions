@@ -13,7 +13,6 @@
 		5FEE8D51198DB85F00C8898F /* NSDate+Utilities.h in Headers */ = {isa = PBXBuildFile; fileRef = 5FEE8D4D198DB85F00C8898F /* NSDate+Utilities.h */; };
 		5FEE8D52198DB85F00C8898F /* NSDate+Utilities.m in Sources */ = {isa = PBXBuildFile; fileRef = 5FEE8D4E198DB85F00C8898F /* NSDate+Utilities.m */; };
 		5FEE8D54198DBA5000C8898F /* NSDate+UtilitiesTest.m in Sources */ = {isa = PBXBuildFile; fileRef = 5FEE8D53198DBA5000C8898F /* NSDate+UtilitiesTest.m */; };
-		5FEE8D56198DBA6400C8898F /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 5FEE8D55198DBA6400C8898F /* Info.plist */; };
 		5FEE8D59198DBB4500C8898F /* NSDate+Epoch.m in Sources */ = {isa = PBXBuildFile; fileRef = 5FEE8D4C198DB85F00C8898F /* NSDate+Epoch.m */; };
 		5FEE8D5A198DBB4700C8898F /* NSDate+Utilities.m in Sources */ = {isa = PBXBuildFile; fileRef = 5FEE8D4E198DB85F00C8898F /* NSDate+Utilities.m */; };
 /* End PBXBuildFile section */
@@ -168,7 +167,7 @@
 		5FEE8D29198DB80F00C8898F /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastUpgradeCheck = 0600;
+				LastUpgradeCheck = 0610;
 				ORGANIZATIONNAME = ZDima;
 				TargetAttributes = {
 					5FEE8D30198DB81000C8898F = {
@@ -203,7 +202,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				5FEE8D56198DBA6400C8898F /* Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -322,6 +320,7 @@
 		5FEE8D46198DB81000C8898F /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				COMBINE_HIDPI_IMAGES = YES;
 				EXECUTABLE_PREFIX = lib;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
@@ -330,6 +329,7 @@
 		5FEE8D47198DB81000C8898F /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				COMBINE_HIDPI_IMAGES = YES;
 				EXECUTABLE_PREFIX = lib;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
