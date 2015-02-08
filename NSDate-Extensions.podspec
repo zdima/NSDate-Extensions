@@ -5,7 +5,7 @@ Pod::Spec.new do |s|
   s.summary  = 'Practical real-world dates.'
   s.homepage = 'http://ericasadun.com'
   s.author   = { 'Erica Sadun' => 'erica@ericasadun.com', 'Dmitriy Zakharkin' => 'mail@zdima.net' }
-  s.source   = { :git => 'https://github.com/zdima/NSDate-Extensions.git', :commit => '9510d19e6137652c1bfdde827c3ceb32f723ab1b' }
+  s.source   = { :git => 'https://github.com/zdima/NSDate-Extensions.git', :commit => '508e484dc44e1db90fe30ef4dc3d616f70c6fe66' }
   s.source_files = 'NSDate+Utilities.{h,m}', 'NSDate+Epoch.{h,m}'
   s.framework = 'Foundation'
 
