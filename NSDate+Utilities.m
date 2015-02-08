@@ -180,7 +180,7 @@ static const unsigned componentFlags = (NSYearCalendarUnit| NSMonthCalendarUnit 
 	NSDateComponents *components2 = [[NSDate currentCalendar] components:componentFlags fromDate:aDate];
 	
 	// Must be same week. 12/31 and 1/1 will both be week "1" if they are in the same week
-	if (components1.week != components2.week) return NO;
+	if (components1.weekOfYear != components2.weekOfYear) return NO;
 	
 	// Must have a time interval under 1 week. Thanks @aclark
 	return (abs([self timeIntervalSinceDate:aDate]) < D_WEEK);
@@ -329,7 +329,7 @@ static const unsigned componentFlags = (NSYearCalendarUnit| NSMonthCalendarUnit 
 - (NSDate *) dateByAddingWeeks: (NSInteger) dWeeks
 {
 	NSDateComponents *components = [[NSDateComponents alloc] init];
-	components.week = dWeeks;
+	components.weekOfYear = dWeeks;
 	NSDate* newDate = [[NSCalendar currentCalendar] dateByAddingComponents:components toDate:self options:0];
 	return newDate;
 }
@@ -493,7 +493,7 @@ static const unsigned componentFlags = (NSYearCalendarUnit| NSMonthCalendarUnit 
 - (NSInteger) week
 {
 	NSDateComponents *components = [[NSDate currentCalendar] components:componentFlags fromDate:self];
-	return components.week;
+	return components.weekOfYear;
 }
 
 - (NSInteger) weekday
